@@ -1,0 +1,286 @@
+<nav aria-label="breadcrumb" class="navigation text-center mt-4 py-5 px-2 px-2">
+  <h2 class="fw-bold" *ngIf="product">{{ product.product_name }}</h2>
+  <ol class="breadcrumb justify-content-center">
+    <li class="breadcrumb-item fw-bold">
+      <a href="#">Material Handling</a>
+    </li>
+    <li class="breadcrumb-item fw-bold"><a href="#">Forklift</a></li>
+    <li class="breadcrumb-item fw-bold">Rough Terrain Forklift</li>
+  </ol>
+</nav>
+<main class="mx-2 mx-md-5">
+  <div class="row mt-4">
+    <!-- Hình ảnh sản phẩm -->
+    <div class="col-md-8">
+      <!-- Main Image -->
+      <div id="carouselExample" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active main-img rounded-4">
+            <img
+              [src]="selectedImage"
+              alt="Main Image"
+              class="img-main img-fluid rounded-4"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev custom-carousel-control"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+          (click)="previousImage()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrow-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+            />
+          </svg>
+        </button>
+        <button
+          class="carousel-control-next custom-carousel-control"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+          (click)="nextImage()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrow-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Thumbnail Grid -->
+      <div class="image-grid mt-3">
+        <div class="row flex-nowrap overflow-auto" id="image-gallery">
+          <div
+            class="col-3 col-xl-2"
+            *ngFor="let image of product?.imageLinks; let i = index"
+          >
+            <img
+              class="image-item img-fluid border rounded-4"
+              [src]="image"
+              [alt]="'Hình ảnh ' + (i + 1)"
+              (click)="selectImage(image)"
+              [ngClass]="{ 'yellow-border': selectedImage === image }"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thông tin sản phẩm -->
+    <div class="col-md-4 d-flex flex-column pt-4 pt-md-0">
+      <!-- Tên sản phẩm -->
+      <h5 *ngIf="product" class="product-name fw-bold">{{ product.product_name }}</h5>
+
+      <!-- Logo và vị trí Hà Nội -->
+      <div class="d-flex align-items-center my-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-geo-alt-fill me-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+          />
+        </svg>
+        <span *ngIf="product" class="fw-bold">{{ product.location }}</span>
+      </div>
+      <ul class="list-unstyled">
+        <li class="d-flex justify-content-between">
+          <strong class="custom-color-strong">Tình trạng</strong>
+          <span *ngIf="product" class="fw-bold custom-color">{{ product.state }}</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong class="custom-color-strong">Thời gian bàn giao</strong>
+          <span *ngIf="product" id="transferState" class="fw-bold custom-color-text">{{
+            product.transferState
+          }}</span>
+        </li>
+        <hr class="my-4" />
+        <li class="my-4">
+          <h2 class="fw-bold d-inline" *ngIf="product">
+            {{ product.price | vietnamCurrency }}
+          </h2>
+          <span class="fs-6 fw-bold"> VNĐ</span>
+        </li>
+        <li>
+          <p id="description" class="fw-bold"></p>
+        </li>
+      </ul>
+      <button class="btn btn-primary">Mua ngay</button>
+    </div>
+  </div>
+  <div class="row col-md-8">
+    <div class="accordion my-4" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button fw-bold fs-4"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne"
+          >
+            General Information
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseOne"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body">
+            <ul class="list-unstyled">
+              <li class="d-flex justify-content-between fs-6">
+                <span>Equipment Id</span>
+                <span class="" *ngIf="product">{{ product.equipment_id }}</span>
+              </li>
+              <li class="d-flex justify-content-between fs-6">
+                <span>Brand</span> <span class="" *ngIf="product">{{ product.brand }}</span>
+              </li>
+              <li class="d-flex justify-content-between fs-6">
+                <span>Model</span> <span class="" *ngIf="product">{{ product.model }}</span>
+              </li>
+              <li class="d-flex justify-content-between fs-6">
+                <span>Manufacture Year</span>
+                <span class="" *ngIf="product">{{ product.manufacture_year }}</span>
+              </li>
+              <li class="d-flex justify-content-between fs-6">
+                <span>Lead Time</span>
+                <span class="" *ngIf="product">{{ product.lead_time }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion my-4" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed fw-bold fs-4"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseTwo"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseTwo"
+          >
+            Technical Information
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseTwo"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body">
+            <ul class="list-unstyled">
+              <li class="d-flex justify-content-between fs-6">
+                <span>Width Across Fork</span>
+                <span *ngIf="product" class=""
+                  >{{ product.techInfo.widthFork }}
+                  {{ product.techInfo.widthUnit }}</span
+                >
+              </li>
+              <li class="d-flex justify-content-between fs-6">
+                <span>Working Capacity</span>
+                <span *ngIf="product" class=""
+                  >{{ product.techInfo.capacityValue }}
+                  {{ product.techInfo.capacityUnit }}</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion my-4" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed fw-bold fs-4"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseThree"
+            aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseThree"
+          >
+            Bảo hiểm
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseThree"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body">
+            <ul class="list-unstyled">
+              <li class="d-flex flex-column d-md-block">
+                <button class="btn me-2">
+                  <img src="assets/image/shield-tick.png" alt="" />
+                </button>
+                <span class="fs-custom fw-semibold my-4 my-md-0"
+                  >Việc mua thiết bị của bạn sẽ được bảo vệ bởi chế độ bảo hành
+                  mua thiết bị của ComacPro</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion my-4" id="accordionPanelsStayOpenExample">
+      <div
+        class="accordion-item d-flex justify-content-between align-items-center"
+      >
+        <h2 class="accordion-header fw-bold fs-4 custom-padding">Catalogue</h2>
+        <button class="btn btn-primary custom-margin">Tải về</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<aside
+  class="d-lg-flex justify-content-between mt-4 py-5 px-2 px-md-5 text-center"
+>
+  <img
+    src="assets/image/Link → ic-6.png.png"
+    alt="Secondary Link Icon"
+    class="img-fluid mb-3 rounded"
+  />
+  <img
+    src="assets/image/Link → ic-6.png.png"
+    alt="Secondary Link Icon"
+    class="img-fluid mb-3 rounded"
+  />
+  <img
+    src="assets/image/Link → ic-5.png.png"
+    alt="Link Icon"
+    class="img-fluid mb-3 rounded"
+  />
+  <img
+    src="assets/image/Link → tech.png.png"
+    alt="Technology Icon"
+    class="img-fluid mb-3 rounded"
+  />
+</aside>

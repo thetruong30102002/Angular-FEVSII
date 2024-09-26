@@ -1,0 +1,11 @@
+.nav-link.active {
+    background-color: #FFEFD5;
+    border-radius: 10px; /* Nếu muốn bo góc */
+  }
+  .nav-link {
+    color: #2C2A29;
+  }
+  .nav-link:hover {
+    color: #FFA21A;
+  }
+

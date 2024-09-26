@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  .btn {
+    background-color: #FFA21A !important;
+    border: none !important;
+    font-weight: bold !important;
+    color: #121110 !important;
+  }
+  .list-unstyled>li {
+    font-size: 12px;
+  }
+  .list-unstyled>li>a {
+    font-size: 16px;
+    color: #4C4A48;
+  }
+  .list-unstyled>li>h2 {
+    color: #FFA21A;
+  }
+  .list-unstyled>li>p {
+    color: #706C69;
+  }
+  .list-unstyled>li>span {
+    color: #4C4A48;
+  }

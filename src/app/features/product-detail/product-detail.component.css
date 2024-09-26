@@ -1,0 +1,145 @@
+.navigation{
+    background-color: #FFC900;
+  }
+  .navigation a{
+    text-decoration: none;
+    color: #4C4A48;
+  }
+
+.row .product-name{
+    font-size: 18px;
+  }
+  .custom-color-strong{
+    color:  #4C4A48;
+  }
+ 
+  .custom-color-text{
+    color: #2C2A29;
+  }
+  .bi-geo-alt-fill{
+    color: #FFA21A;
+  }
+
+
+  /* Remove the border on the bottom of the accordion button */
+.accordion-button {
+  border-bottom: 0; /* Removes the border under the button */
+}
+
+/* Ensure the button color doesn't change when expanded */
+.accordion-button:not(.collapsed) {
+  background-color: transparent; /* Keeps the background color transparent when expanded */
+  color: inherit; /* Keeps the text color consistent */
+}
+
+/* Optional: Remove the box shadow if you want */
+.accordion-button:focus {
+  box-shadow: none; /* Removes the focus shadow */
+}
+
+/* Ensure the accordion button does not change color when hovered */
+.accordion-button:hover {
+  background-color: transparent; /* Keeps the background color transparent on hover */
+  color: inherit; /* Keeps the text color consistent on hover */
+}
+/* Xóa viền giữa tiêu đề và nội dung khi mở */
+.accordion-button:not(.collapsed) {
+  border-bottom: none;
+  box-shadow: none;
+}
+.accordion-button::after {
+  margin: 0 5px;
+}
+
+.custom-padding{
+  padding:16px 20px;
+}
+
+.custom-margin{
+  margin:16px 20px ;
+}
+
+
+.fs-custom{
+  font-size: 16px;
+}
+
+aside {
+  background-color: #F1F1F1;
+}
+
+#image-gallery {
+  white-space: nowrap; /* Để hình ảnh không bị ngắt dòng */
+}
+
+
+.image-item {
+  cursor: pointer;
+  transition: transform 0.3s;
+  height: 100%;
+}
+
+.main-img {
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc nếu cần */
+  overflow: hidden; /* Ẩn phần ảnh thừa nếu có */
+  background-color: #4C4A48;
+  height: 70vh;
+  text-align: center;
+}
+
+.img-main {
+  object-fit: contain;
+  height: 100%;
+}
+
+
+.image-item:hover {
+  transform: scale(1.010);
+}
+
+  /* Ẩn thanh cuộn */
+  .row::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn trong trình duyệt Webkit */
+  }
+  
+  .yellow-border {
+    border: 2px solid #FFC900 !important;
+  }
+  
+  .custom-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Đảm bảo nút hiển thị trên ảnh */
+    background-color: #FFFFFF !important; /* Màu nền mờ cho nút */
+    border-radius: 30%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custom-carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Thay đổi màu khi hover */
+  }
+  
+  .carousel-control-prev {
+    left: 15px; /* Căn lề trái */
+  }
+  
+  .carousel-control-next {
+    right: 15px; /* Căn lề phải */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    display: none; /* Ẩn biểu tượng mũi tên mặc định của Bootstrap */
+  }
+  
+  .bi-arrow-left,
+  .bi-arrow-right {
+    font-size: 24px;
+    color: #FFA21A;
+  }
