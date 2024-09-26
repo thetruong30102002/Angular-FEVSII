@@ -107,39 +107,4 @@ aside {
     border: 2px solid #FFC900 !important;
   }
   
-  .custom-carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10; /* Đảm bảo nút hiển thị trên ảnh */
-    background-color: #FFFFFF !important; /* Màu nền mờ cho nút */
-    border-radius: 30%;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   
-  .custom-carousel-control:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Thay đổi màu khi hover */
-  }
-  
-  .carousel-control-prev {
-    left: 15px; /* Căn lề trái */
-  }
-  
-  .carousel-control-next {
-    right: 15px; /* Căn lề phải */
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    display: none; /* Ẩn biểu tượng mũi tên mặc định của Bootstrap */
-  }
-  
-  .bi-arrow-left,
-  .bi-arrow-right {
-    font-size: 24px;
-    color: #FFA21A;
-  }

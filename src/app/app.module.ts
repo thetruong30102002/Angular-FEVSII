@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { VietnamCurrencyPipe } from './shared/pipes/vietnamCurrency/vietnam-currency.pipe';
 import { ProductDetailComponent } from './features/product-detail/product-detail.component';
 import { HomeComponent } from './features/home/home.component';
+import { SlideImgProductComponent } from './features/product-detail/slide-img-product/slide-img-product.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HomeComponent } from './features/home/home.component';
     LayoutComponent,
     HomeComponent,
     ProductDetailComponent,
+    SlideImgProductComponent,
     VietnamCurrencyPipe
   ],
   imports: [

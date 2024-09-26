@@ -13,7 +13,7 @@
     <!-- Hình ảnh sản phẩm -->
     <div class="col-md-8">
       <!-- Main Image -->
-      <div id="carouselExample" class="carousel slide" data-bs-ride="false">
+      <!-- <div id="carouselExample" class="carousel slide" data-bs-ride="false">
         <div class="carousel-inner">
           <div class="carousel-item active main-img rounded-4">
             <img
@@ -66,8 +66,7 @@
           </svg>
         </button>
       </div>
-
-      <!-- Thumbnail Grid -->
+      
       <div class="image-grid mt-3">
         <div class="row flex-nowrap overflow-auto" id="image-gallery">
           <div
@@ -83,7 +82,8 @@
             />
           </div>
         </div>
-      </div>
+      </div> -->
+    <app-slide-image-product [images]="product.imageLinks"></app-slide-image-product>
     </div>
 
     <!-- Thông tin sản phẩm -->
