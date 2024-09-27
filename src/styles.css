@@ -7,6 +7,11 @@ body {
     font-weight: bold !important;
     color: #121110 !important;
   }
+
+  .btn:hover {
+    color: #FFF !important;
+  }
+
   .list-unstyled>li {
     font-size: 12px;
   }

@@ -28,16 +28,3 @@
     font-size: 1.5rem;
   }
   
-  a {
-    font-size: 1rem;
-    color: #fff;
-    text-decoration: none;
-    background-color: #007bff;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-  
-  a:hover {
-    background-color: #0056b3;
-  }
-  

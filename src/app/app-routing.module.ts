@@ -4,7 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './features/home/home.component';
 import { ProductDetailComponent } from './features/product-detail/product-detail.component';
 import { NotFoundComponent } from './features/not-found/not-found.component';
-import { SlideImgProductComponent } from './features/product-detail/slide-img-product/slide-img-product.component';
+import { ProductResolver } from './services/product/product-resolver.service';
 
 const routes: Routes = [
   {
@@ -12,21 +12,24 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'product/:id', component: ProductDetailComponent },
-    ]
+      {
+        path: 'product/:id',
+        component: ProductDetailComponent,
+        resolve: {
+          product: ProductResolver,
+        },
+      },
+    ],
   },
   {
     path: '404',
-    component: NotFoundComponent
+    component: NotFoundComponent,
   },
-  {
-    path: 'slide',
-    component: SlideImgProductComponent
-  }
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

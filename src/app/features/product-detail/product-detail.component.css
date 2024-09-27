@@ -59,7 +59,6 @@
   margin:16px 20px ;
 }
 
-
 .fs-custom{
   font-size: 16px;
 }
@@ -68,43 +67,5 @@ aside {
   background-color: #F1F1F1;
 }
 
-#image-gallery {
-  white-space: nowrap; /* Để hình ảnh không bị ngắt dòng */
-}
-
-
-.image-item {
-  cursor: pointer;
-  transition: transform 0.3s;
-  height: 100%;
-}
-
-.main-img {
-  justify-content: center; /* Căn giữa theo chiều ngang */
-  align-items: center; /* Căn giữa theo chiều dọc nếu cần */
-  overflow: hidden; /* Ẩn phần ảnh thừa nếu có */
-  background-color: #4C4A48;
-  height: 70vh;
-  text-align: center;
-}
-
-.img-main {
-  object-fit: contain;
-  height: 100%;
-}
-
-
-.image-item:hover {
-  transform: scale(1.010);
-}
-
-  /* Ẩn thanh cuộn */
-  .row::-webkit-scrollbar {
-    display: none; /* Ẩn thanh cuộn trong trình duyệt Webkit */
-  }
-  
-  .yellow-border {
-    border: 2px solid #FFC900 !important;
-  }
   
   
